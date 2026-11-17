@@ -1,0 +1,10 @@
+{
+  "skill_name": "florida-material-risk",
+  "evals": [
+    {"id": 1, "prompt": "I manage the Florida location - in the next 26 weeks, are there any significant shortfalls in products (Materials) happening?", "expected_output": "Defaults to Scenario 1 without asking; bounded full-horizon read if practical; after a broad timeout no 26-week fallback; says exactly which weeks/materials were verified and never calls a partial read complete.", "files": []},
+    {"id": 2, "prompt": "In Florida DC Scenario 1, check Week 2 FY25 material shortages only.", "expected_output": "Only one week and one location; distinguishes unmet demand from negative forecast inventory; no all-sites/all-weeks search.", "files": []},
+    {"id": 3, "prompt": "Given the previously identified short materials, which finished goods are affected?", "expected_output": "Uses full supplied PDF and exact code matching; states previous shortfall data was prior-read; does not rerun broad inventory read.", "files": []},
+    {"id": 4, "prompt": "Which location has the biggest excess for the Florida materials we flagged?", "expected_output": "Reads donor excess only for flagged materials and weeks; no PO scan; does not assert transfer feasibility.", "files": []},
+    {"id": 5, "prompt": "Are any committed POs for those Florida shortage materials worth pulling forward?", "expected_output": "Searches only relevant open committed lines; checks date staleness; does not reread 26-week inventory forecast or alter POs.", "files": []}
+  ]
+}
